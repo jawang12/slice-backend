@@ -1,0 +1,36 @@
+{
+  "editor.formatOnSave": true,
+  // turn it off for JS and JSX, we will do this via eslint
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  // tell the ESLint plugin to run on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  // Optional BUT IMPORTANT: If you have the prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already
+  "prettier.disableLanguages": [
+    "javascript",
+    "javascriptreact"
+  ],
+  "peacock.color": "#ff8080",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#ffb3b3",
+    "activityBar.activeBorder": "#009f00",
+    "activityBar.background": "#ffb3b3",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#009f00",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "statusBar.background": "#ff8080",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#ff4d4d",
+    "titleBar.activeBackground": "#ff8080",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#ff808099",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+}
