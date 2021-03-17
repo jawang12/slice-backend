@@ -1,4 +1,5 @@
 import { MdLocalPizza } from 'react-icons/md';
+import PriceInput from '../components/PriceInput';
 
 export default {
   // This is the display name for the type
@@ -44,8 +45,35 @@ export default {
       // The identifier for this field used in the api's
       name: 'price',
       type: 'number',
+      // Overrides built in component from sanity with your own
+      inputComponent: PriceInput,
       description: 'Price of the pie',
       validation: (rule) => rule.min(10)
     },
+    {
+      title: 'Toppings',
+      name: 'toppings',
+      type: 'array',
+      // type: toppings comes from name prop (line 5 of toppings.js)
+      // type of array of references to toppings
+      of: [{ type: 'reference', to: [{ type: 'toppings'}]}] // one to many relationship
+    }
   ],
+  preview: {
+    select: {
+      name: 'name',
+      image: 'image',
+      topping0: 'toppings.0.name',
+      topping1: 'toppings.1.name',
+      topping2: 'toppings2.name',
+      topping3: 'toppings3.name',
+    },
+    prepare: ({ name, image, ...toppings }) => {
+      return {
+        title: name,
+        media: image,
+        subtitle: Object.values(toppings).filter(Boolean).join(', ')
+      }
+    }
+  }
 };
