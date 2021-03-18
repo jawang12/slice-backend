@@ -12,7 +12,7 @@ const formatMoney = Intl.NumberFormat('en-US', {
 
 const PriceInput = ({ type, value, onChange, inputComponent }) => (
   <div>
-    <h2>{type.title} - {value ? formatMoney(value) : 0}</h2>
+    <h2>{type.title} - {value ? formatMoney(value / 100) : 0}</h2>
     <p>{type.description}</p>
     <input 
       type={type.name} 

@@ -48,7 +48,7 @@ export default {
       // Overrides built in component from sanity with your own
       inputComponent: PriceInput,
       description: 'Price of the pie',
-      validation: (rule) => rule.min(10)
+      validation: (rule) => rule.min(1000)
     },
     {
       title: 'Toppings',
@@ -56,7 +56,7 @@ export default {
       type: 'array',
       // type: toppings comes from name prop (line 5 of toppings.js)
       // type of array of references to toppings
-      of: [{ type: 'reference', to: [{ type: 'toppings'}]}] // one to many relationship
+      of: [{ type: 'reference', to: [{ type: 'topping'}]}] // one to many relationship
     }
   ],
   preview: {

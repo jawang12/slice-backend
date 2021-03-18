@@ -2,7 +2,7 @@ import { FaPepperHot } from 'react-icons/fa';
 
 export default {
   title: 'Toppings',
-  name: 'toppings',
+  name: 'topping',
   type: 'document',
   icon: FaPepperHot,
   fields: [
