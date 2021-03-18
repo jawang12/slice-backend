@@ -54,9 +54,13 @@ export default {
       title: 'Toppings',
       name: 'toppings',
       type: 'array',
-      // type: toppings comes from name prop (line 5 of toppings.js)
+      // type: topping on line 61 comes from name prop (line 5 of topping.js)
       // type of array of references to toppings
-      of: [{ type: 'reference', to: [{ type: 'topping'}]}] // one to many relationship
+      of: [
+        { type: 'reference', 
+          to: [{ type: 'topping'}]
+        }
+      ] // one to many relationship
     }
   ],
   preview: {
